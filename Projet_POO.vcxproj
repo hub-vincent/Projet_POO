@@ -127,7 +127,11 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="Grille.cpp" />
     <ClCompile Include="Projet_POO.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="Grille.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
