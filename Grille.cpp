@@ -2,6 +2,7 @@
 #include <iostream>
 #include <vector>
 #include <fstream>
+#include <string>
 
 
 Grille::Grille(std::string lecture, std::string ecriture) : lecture(lecture), ecriture(ecriture)
@@ -28,19 +29,22 @@ void Grille::lire()
 	char character{}; //Initialisation de variables.
 	chaine >> x;
 	chaine >> y;
-	std::cout << x << std::endl;
-	std::cout << y << std::endl;
 	int index = -1;
 	for (int i = 0; i < 50;i++)
 	{
 		chaine.get(character);
-		
+		std::string nom_cellule = "Cellule_";
 		if (character == '1' || character == '0') {
 			index +=1;
+			nom_cellule += std::to_string(index);
 			std::cout << "Index:" << index << ".Charactere:" << character << std::endl;
+			std::cout << nom_cellule << std::endl;
+			Cellule nom_cellule(index,character,this->x);
 		}
 	}
 }
+
+
 
 void Grille::ecrire()
 {
@@ -48,7 +52,7 @@ void Grille::ecrire()
 	if (Ecrire)
 	{
 		Ecrire << "Bonjour, je suis une phrase écrite dans un fichier." << std::endl;
-		Ecrire << 42.1337 << std::endl;
+		Ecrire << x << std::endl;
 		Ecrire << "J'ai 32 ans." << std::endl;
 	}
 	Ecrire.close();

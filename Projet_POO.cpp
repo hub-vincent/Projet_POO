@@ -10,11 +10,11 @@
 int main()
 {
     Grille Existance("C:/Users/Vincent/source/repos/Projet_POO/Texte.txt","C:/Users/Vincent/source/repos/Projet_POO/Tests.txt");
-    Existance.ecrire();
     Existance.lire();
+    Existance.ecrire();
     std::cout << "Hello World!\n";
-    Existance.generer_Grille();
-    Existance.afficher_Grille();
+    Cellule Essai(9, 1, 3);
+    Essai.reveal_xy();
 }
 
 // Exécuter le programme : Ctrl+F5 ou menu Déboguer > Exécuter sans débogage
