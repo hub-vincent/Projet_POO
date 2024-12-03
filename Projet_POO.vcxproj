@@ -129,13 +129,11 @@
   <ItemGroup>
     <ClCompile Include="Cellule.cpp" />
     <ClCompile Include="Grille.cpp" />
-    <ClCompile Include="Parser.cpp" />
     <ClCompile Include="Projet_POO.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Cellule.h" />
     <ClInclude Include="Grille.h" />
-    <ClInclude Include="Parser.h" />
   </ItemGroup>
   <ItemGroup>
     <Text Include="Tests.txt" />

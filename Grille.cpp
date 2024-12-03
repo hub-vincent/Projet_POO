@@ -32,11 +32,10 @@ void Grille::lire()
 	std::cout << y << std::endl;
 	for (int i = 0; i < 50;i++)
 	{
-
 		chaine.get(character);
 		std::cout << character << std::endl;
 		if (character == '1' || character == '0') {
-			std::cout << "1/0 :" << character << std::endl;
+			std::cout << "1/0: " << character << std::endl;
 		}
 	}
 }
@@ -72,7 +71,7 @@ void Grille::afficher_Grille()
 	}
 }
 
-void Grille::grille_set(int a, int b)
+void Grille::set_Grille(int a, int b)
 {
 	x = a;
 	y = b;

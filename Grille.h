@@ -4,8 +4,8 @@
 class Grille
 {
 	private:
-	int x;
-	int y;
+	int x=0;
+	int y=0;
 	std::string lecture;
 	std::string ecriture;
 	std::string ligne;
@@ -16,6 +16,6 @@ class Grille
 	void afficher_Grille();
 	void lire();
 	void ecrire();
-	void grille_set(int a, int b);
+	void set_Grille(int a, int b);
 };
 

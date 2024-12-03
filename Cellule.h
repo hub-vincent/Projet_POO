@@ -2,10 +2,11 @@
 #include "Grille.h"
 class Cellule
 {
+private:
 	int x;
 	int y;
 	bool val;
-	std::vector<int> a = {};
-	void ajouter_cellule();
+public:
+	Cellule(int index, bool val, int X_max);
 };
 
