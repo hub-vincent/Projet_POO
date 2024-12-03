@@ -1,10 +1,7 @@
-#include "Grille.h"
-#include <iostream>
-#include <vector>
-#include <fstream>
+#include "Parser.h"
+#include "Cellule.h"
 
-
-Grille::Grille(std::string lecture, std::string ecriture) : lecture(lecture), ecriture(ecriture)
+Parser::Parser(std::string lecture, std::string ecriture) : lecture(lecture), ecriture(ecriture)
 {
 	std::ifstream Lecture(this->lecture.c_str());
 	std::ofstream Ecriture(this->ecriture.c_str());
@@ -13,67 +10,44 @@ Grille::Grille(std::string lecture, std::string ecriture) : lecture(lecture), ec
 	{
 		std::cout << "LECTURE : fichier INVALIDE" << std::endl;
 	}
-
-	if (!Ecriture)
+	
+	if (!Ecriture) 
 	{
 		std::cout << "ECRITURE : fichier INVALIDE" << std::endl;
 	}
 
 }
 
-
-void Grille::lire()
+void Parser::lire()
 {
+	int grille_x;
+	int grille_y;
 	std::ifstream chaine(this->lecture.c_str());
 	char character{}; //Initialisation de variables.
-	chaine >> x;
-	chaine >> y;
-	std::cout << x << std::endl;
-	std::cout << y << std::endl;
+	chaine >> grille_x;
+	chaine >> grille_y;
+	std::cout << grille_x << std::endl;
+	std::cout << grille_y << std::endl;
+	Grille::grille_set(grille_x,grille_y);
 	for (int i = 0; i < 50;i++)
 	{
 
 		chaine.get(character);
 		std::cout << character << std::endl;
-		if (character == '1' || character == '0') {
+		if (character=='1' || character=='0') {
 			std::cout << "1/0 :" << character << std::endl;
 		}
 	}
 }
 
-void Grille::ecrire()
+void Parser::ecrire()
 {
 	std::ofstream Ecrire(ecriture.c_str());
-	if (Ecrire)
+	if (Ecrire)  
 	{
 		Ecrire << "Bonjour, je suis une phrase écrite dans un fichier." << std::endl;
 		Ecrire << 42.1337 << std::endl;
 		Ecrire << "J'ai 32 ans." << std::endl;
 	}
-	Ecrire.close();
-}
-
-void Grille::generer_Grille()
-{
-	for (int i = 0; i <= x; i++)
-	{
-		for (int j = 0; j <= y;j++)
-		{
-			a.push_back(i);
-			a.push_back(j);
-		}
-	}
-}
-
-void Grille::afficher_Grille()
-{
-	for (int val : a) {
-		std::cout << val << " ";
-	}
-}
-
-void Grille::grille_set(int a, int b)
-{
-	x = a;
-	y = b;
+	Ecrire.close();  
 }

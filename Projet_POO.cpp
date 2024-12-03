@@ -2,10 +2,21 @@
 //
 
 #include <iostream>
+#include <vector>
+#include <string>
+#include <fstream>
+#include "Grille.h"
+#include "Parser.h"
 
 int main()
 {
+    Parser Existance("C:/Users/Vincent/source/repos/Projet_POO/Texte.txt","C:/Users/Vincent/source/repos/Projet_POO/Tests.txt");
+    Existance.ecrire();
+    Existance.lire();
     std::cout << "Hello World!\n";
+    Grille Grid(2,2);
+    Grid.generer_Grille();
+    Grid.afficher_Grille();
 }
 
 // Exécuter le programme : Ctrl+F5 ou menu Déboguer > Exécuter sans débogage
