@@ -30,12 +30,14 @@ void Grille::lire()
 	chaine >> y;
 	std::cout << x << std::endl;
 	std::cout << y << std::endl;
+	int index = -1;
 	for (int i = 0; i < 50;i++)
 	{
 		chaine.get(character);
-		std::cout << character << std::endl;
+		
 		if (character == '1' || character == '0') {
-			std::cout << "1/0: " << character << std::endl;
+			index +=1;
+			std::cout << "Index:" << index << ".Charactere:" << character << std::endl;
 		}
 	}
 }
