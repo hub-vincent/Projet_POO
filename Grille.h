@@ -15,7 +15,7 @@ class Grille
 	Grille(std::string lecture, std::string ecriture);
 	void generer_Grille();
 	void afficher_Grille();
-	void lire();
+	void lireFichier();
 	void ecrire();
 	void set_Grille(int a, int b);
 };
