@@ -12,7 +12,7 @@ class Grille
 	std::string ligne;
 	public:
 	Grille(std::string lecture, std::string ecriture);
-	void iteration();
+	void iteration(int n);
 	void afficher_Grille();
 	void lireFichier();
 	void ecrireFichier();
