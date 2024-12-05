@@ -10,10 +10,9 @@ class Grille
 	std::string lecture;
 	std::string ecriture;
 	std::string ligne;
-	std::vector<int> a{};
 	public:
 	Grille(std::string lecture, std::string ecriture);
-	void generer_Grille();
+	void iteration();
 	void afficher_Grille();
 	void lireFichier();
 	void ecrireFichier();

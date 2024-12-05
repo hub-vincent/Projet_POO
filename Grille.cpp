@@ -24,6 +24,10 @@ Grille::Grille(std::string lecture, std::string ecriture) : lecture(lecture), ec
 
 }
 
+void Grille::iteration()
+{
+}
+
 
 void Grille::lireFichier()
 {
@@ -60,17 +64,7 @@ void Grille::ecrireFichier()
 	Ecrire.close();
 }
 
-void Grille::generer_Grille()
-{
-	for (int i = 0; i <= x; i++)
-	{
-		for (int j = 0; j <= y;j++)
-		{
-			a.push_back(i);
-			a.push_back(j);
-		}
-	}
-}
+
 
 void Grille::afficher_Grille()
 {

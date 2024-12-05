@@ -6,12 +6,12 @@ Cellule::Cellule(int index, bool b, int max_x) {
 	val = b;
 }
 
-int Cellule::reveal_coordonates_y()
+int Cellule::reveal_coordonates_y() const
 {
 	return y;
 }
 
-int Cellule::reveal_coordonates_x()
+int Cellule::reveal_coordonates_x() const
 {
 	return x;
 }
