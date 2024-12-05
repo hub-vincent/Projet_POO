@@ -14,7 +14,7 @@ int main()
     Existance.ecrireFichier();
     std::cout << "Hello World!\n";
     Existance.afficher_Grille();
-    Existance.iteration(1);
+    Existance.iteration(9);
     Existance.afficher_Grille();
 }
 

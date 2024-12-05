@@ -5,7 +5,6 @@
 #include <string>
 std::vector<Cellule> cellules;
 
-
 Grille::Grille(std::string lecture, std::string ecriture) : lecture(lecture), ecriture(ecriture)
 {
 	std::ifstream Lecture(this->lecture.c_str());
