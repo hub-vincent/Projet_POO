@@ -12,7 +12,6 @@ int main()
     Grille Existance("C:/Users/Vincent/source/repos/Projet_POO/Texte.txt","C:/Users/Vincent/source/repos/Projet_POO/Tests.txt");
     Existance.lireFichier();
     Existance.ecrireFichier();
-    std::cout << "Hello World!\n";
     Existance.afficher_Grille();
     Existance.iteration(1);
     Existance.afficher_Grille();

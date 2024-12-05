@@ -12,10 +12,10 @@ class Grille
 	std::string ligne;
 	public:
 	Grille(std::string lecture, std::string ecriture);
-	bool testUnitaire(std::string a);
-	void iteration(int n);
-	void afficher_Grille() const;
-	void lireFichier();
-	void ecrireFichier();
+	virtual bool testUnitaire(std::string a);
+	virtual void iteration(int n);
+	virtual void afficher_Grille() const;
+	virtual void lireFichier();
+	virtual void ecrireFichier();
 };
 

@@ -22,12 +22,7 @@ Grille::Grille(std::string lecture, std::string ecriture) : lecture(lecture), ec
 
 }
 
-bool Grille::testUnitaire(std::string a) {
-
-
-
-
-
+bool Grille::testUnitaire(std::string a) { 
 	return true;
 }
 
@@ -97,6 +92,7 @@ void Grille::ecrireFichier()
 	std::ofstream Ecrire(ecriture.c_str());
 	if (Ecrire)
 	{
+		Ecrire << "Fichier ecriture:" << std::endl;
 		for (const auto& c : cellules) {
 			Ecrire << c.return_state() << " ";
 			if (c.return_x() == (x - 1))
@@ -111,7 +107,7 @@ void Grille::ecrireFichier()
 
 void Grille::afficher_Grille() const
 {
-	std::cout << "Taille du tableau:" << cellules.size() << std::endl;
+	std::cout << "Taille du tableau : " << cellules.size() << std::endl;
 	for (const auto& c : cellules) {
 		std::cout << c.return_state();
 		std::cout << " ";
