@@ -27,28 +27,28 @@ Grille::Grille(std::string lecture, std::string ecriture) : lecture(lecture), ec
 
 void Grille::lireFichier()
 {
-	std::ifstream chaine(this->lecture.c_str());
-	char character{}; //Initialisation de variables.
+	std::ifstream chaine(this->lecture.c_str()); 
 	chaine >> x;
 	chaine >> y;
+	int valCell;
 	int index = -1;
-	for (int i = 0; i < x*y+19;i++)
+	for (int i = 0; i < x * y;i++)
 	{
-		chaine.get(character);
 		std::string nom_cellule;
-		if (character == '1' || character == '0') {
-			index +=1;
-			nom_cellule = "Cellule_" + std::to_string(index);
-			std::cout << "Index:" << index << ".Charactere:" << character << std::endl;
-			std::cout << nom_cellule << std::endl;
-			Cellule nom_cellule(index,character,this->x);
-		}
+		chaine >> valCell;
+		if (valCell == 1 || valCell == 0) {
+				index += 1;
+				nom_cellule = "Cellule_" + std::to_string(index);
+				std::cout << "Index:" << index << ".Charactere:" << valCell << std::endl;
+				std::cout << nom_cellule << std::endl;
+				cellules.emplace_back(index, valCell, this->x);
+			}
 	}
 }
 
 
 
-void Grille::ecrire()
+void Grille::ecrireFichier()
 {
 	std::ofstream Ecrire(ecriture.c_str());
 	if (Ecrire)
@@ -74,13 +74,9 @@ void Grille::generer_Grille()
 
 void Grille::afficher_Grille()
 {
-	for (int val : a) {
-		std::cout << val << " ";
+	std::cout << "Taille du tableau:" << cellules.size() << std::endl;
+	for (const auto& c : cellules) {
+		c.afficher();
+		std::cout << " ";
 	}
-}
-
-void Grille::set_Grille(int a, int b)
-{
-	x = a;
-	y = b;
 }

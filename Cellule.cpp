@@ -16,6 +16,10 @@ int Cellule::reveal_coordonates_x()
 	return x;
 }
 
-void Cellule::reveal_xy() {
-	std::cout << x << " " << y << " " << val << std::endl;
+void Cellule::afficher() const {
+	std::cout << x;
+	std::cout << y;
+	std::cout << val;
+
 }
+

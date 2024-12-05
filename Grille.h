@@ -16,7 +16,6 @@ class Grille
 	void generer_Grille();
 	void afficher_Grille();
 	void lireFichier();
-	void ecrire();
-	void set_Grille(int a, int b);
+	void ecrireFichier();
 };
 
