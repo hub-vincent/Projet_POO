@@ -22,6 +22,17 @@ Grille::Grille(std::string lecture, std::string ecriture) : lecture(lecture), ec
 
 }
 
+bool Grille::testUnitaire(std::string a) {
+
+
+
+
+
+	return true;
+}
+
+
+
 void Grille::iteration(int n)
 {
 	for (int i = 0; i < n; i++) {
@@ -35,7 +46,7 @@ void Grille::iteration(int n)
 			for (const auto& e : cellules) {
 				if ((y_co - e.return_y() >= -1 && y_co - e.return_y() <= 1) &&
 					(x_co - e.return_x() >= -1 && x_co - e.return_x() <= 1) &&
-					!(x_co == e.return_x() && y_co == e.return_y()) &&
+					!(x_co == e.return_x() && y_co == e.return_y()) && //Exclusion de la cellule même.
 					e.return_state() == 1) {
 					vivantesvoisines++;
 				}
@@ -76,10 +87,9 @@ void Grille::lireFichier()
 		if (valCell == 1 || valCell == 0) {
 				index += 1;
 				cellules.emplace_back(index, valCell, this->x);
-			}
+		}
 	}
 }
-
 
 
 void Grille::ecrireFichier() 
@@ -87,16 +97,19 @@ void Grille::ecrireFichier()
 	std::ofstream Ecrire(ecriture.c_str());
 	if (Ecrire)
 	{
-		Ecrire << "Bonjour, je suis une phrase écrite dans un fichier." << std::endl;
-		Ecrire << x << std::endl;
-		Ecrire << "J'ai 32 ans." << std::endl;
+		for (const auto& c : cellules) {
+			Ecrire << c.return_state() << " ";
+			if (c.return_x() == (x - 1))
+			{
+				Ecrire << "" << std::endl;
+			}
+		}
 	}
 	Ecrire.close();
 }
 
 
-
-void Grille::afficher_Grille()
+void Grille::afficher_Grille() const
 {
 	std::cout << "Taille du tableau:" << cellules.size() << std::endl;
 	for (const auto& c : cellules) {
