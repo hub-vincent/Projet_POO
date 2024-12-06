@@ -6,15 +6,20 @@
 #include <string>
 #include <fstream>
 #include "Grille.h"
+#include "GrilleTorique.h"
 
 int main()
 {
-    Grille Existance("C:/Users/Vincent/source/repos/Projet_POO/Texte.txt","C:/Users/Vincent/source/repos/Projet_POO/Tests.txt");
+    Grille Existance("C:/Users/Vincent/source/repos/Projet_POO/Matrice.txt", "C:/Users/Vincent/source/repos/Projet_POO/Tests.txt");
     Existance.lireFichier();
+    Existance.iteration(4);
     Existance.ecrireFichier();
+    std::cout << " " << std::endl;
+    GrilleTorique B("C:/Users/Vincent/source/repos/Projet_POO/Matrice2.txt", "C:/Users/Vincent/source/repos/Projet_POO/Matrice_out.txt");
+    B.lireFichier();
+    B.afficher_Grille();
     Existance.afficher_Grille();
-    Existance.iteration(1);
-    Existance.afficher_Grille();
+    B.iteration(2);
 }
 
 // Exécuter le programme : Ctrl+F5 ou menu Déboguer > Exécuter sans débogage

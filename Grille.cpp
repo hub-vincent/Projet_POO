@@ -14,16 +14,6 @@ Grille::Grille(std::string lecture, std::string ecriture) : lecture(lecture), ec
 	{
 		std::cout << "LECTURE : fichier INVALIDE" << std::endl;
 	}
-
-	if (!Ecriture)
-	{
-		std::cout << "ECRITURE : fichier INVALIDE" << std::endl;
-	}
-
-}
-
-bool Grille::testUnitaire(std::string a) { 
-	return true;
 }
 
 
@@ -41,7 +31,7 @@ void Grille::iteration(int n)
 			for (const auto& e : cellules) {
 				if ((y_co - e.return_y() >= -1 && y_co - e.return_y() <= 1) &&
 					(x_co - e.return_x() >= -1 && x_co - e.return_x() <= 1) &&
-					!(x_co == e.return_x() && y_co == e.return_y()) && //Exclusion de la cellule même.
+					!(y_co == e.return_y() && x_co == e.return_x()) && //Exclusion de la cellule même.
 					e.return_state() == 1) {
 					vivantesvoisines++;
 				}
@@ -65,12 +55,14 @@ void Grille::iteration(int n)
 		for (const auto& b : morts) {
 			cellules[b].change_state(0);
 		}
+		Grille::afficher_Grille();
 	}
 }
 
 
 void Grille::lireFichier()
 {
+	Grille::clear();
 	std::ifstream chaine(this->lecture.c_str()); 
 	chaine >> x;
 	chaine >> y;
@@ -103,6 +95,13 @@ void Grille::ecrireFichier()
 	}
 	Ecrire.close();
 }
+
+void Grille::clear()
+{
+	cellules.clear();
+}
+
+//std::vector<Cellule>& Grille::return_cellules() {return cellules; }
 
 
 void Grille::afficher_Grille() const

@@ -1,5 +1,6 @@
 #pragma once
 #include "Grille.h"
+
 class Cellule
 {
 private:
@@ -16,4 +17,5 @@ public:
 	int return_state() const;
 	void change_state(bool u);
 };
+
 

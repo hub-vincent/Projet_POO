@@ -40,10 +40,13 @@
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
-    <Text Include="Texte.txt">
+    <Text Include="Matrice.txt">
       <Filter>Fichiers de ressources</Filter>
     </Text>
     <Text Include="Tests.txt">
+      <Filter>Fichiers de ressources</Filter>
+    </Text>
+    <Text Include="Matrice2.txt">
       <Filter>Fichiers de ressources</Filter>
     </Text>
   </ItemGroup>
