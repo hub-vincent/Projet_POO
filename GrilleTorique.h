@@ -6,10 +6,10 @@ class GrilleTorique : public Grille
 {
 	public:
 	void iteration(int n) override;
-	void ecrireFichier();
-	void lireFichier();
+	void ecrireFichier() override;
+	void lireFichier() override;
 	GrilleTorique(std::string lecture, std::string ecriture);
-	void afficher_Grille();
+	void afficher_Grille() override;
 
 };
 

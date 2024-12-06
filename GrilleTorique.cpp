@@ -15,7 +15,8 @@ void GrilleTorique::afficher_Grille()
 
 void GrilleTorique::iteration(int n)
 {
-	/*/for (int i = 0; i < n; i++) {
+	Grille::iteration(n);
+	/*for (int i = 0; i < n; i++) {
 		std::vector<int> viv = {};
 		std::vector<int> morts = {};
 		int vivantesvoisines = 0;

@@ -104,7 +104,7 @@ void Grille::clear()
 //std::vector<Cellule>& Grille::return_cellules() {return cellules; }
 
 
-void Grille::afficher_Grille() const
+void Grille::afficher_Grille()
 {
 	std::cout << "Taille du tableau : " << cellules.size() << std::endl;
 	for (const auto& c : cellules) {
@@ -122,7 +122,7 @@ bool Grille::verifierSolution(const std::string& cheminSolution)
 	//ouverture
 	std::ifstream fichierSolution(cheminSolution.c_str());
 	if (!fichierSolution) {
-		std::cerr << "pas de fichier." << std::endl;
+		std::cerr << "Pas de fichier." << std::endl;
 		return false;
 	}
 	//lecture
@@ -140,6 +140,6 @@ bool Grille::verifierSolution(const std::string& cheminSolution)
 		}
 	}
 
-	std::cout << "BRAVO" << std::endl;
+	std::cout << "Les matrices sont identiques !" << std::endl;
 	return true;
 }
