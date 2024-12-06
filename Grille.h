@@ -21,6 +21,7 @@ class Grille
 	virtual void ecrireFichier();
 	virtual void clear();
 	//std::vector<Cellule>& return_cellules();
+	virtual bool verifierSolution(const std::string& cheminSolution);// testeUnitaire
 };
 
 
