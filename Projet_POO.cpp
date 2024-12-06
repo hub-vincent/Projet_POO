@@ -20,6 +20,17 @@ int main()
     B.afficher_Grille();
     Existance.afficher_Grille();
     B.iteration(2);
+
+    // Vérification du resultat
+std::string cheminSolution = "C:/Users/majch/Desktop/Tests_projet/TexteSolutions.txt";
+if (Existance.verifierSolution(cheminSolution)) {
+    std::cout << "cela correspond" << std::endl;
+}
+else {
+    std::cout << "il y a un probleme" << std::endl;
+}
+
+return 0;
 }
 
 // Exécuter le programme : Ctrl+F5 ou menu Déboguer > Exécuter sans débogage
