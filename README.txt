@@ -5,4 +5,4 @@ TO DO LIST :
 - graphique sur WSL
 - obstacle
 - grille torique
-- Faire un test unitaire
+- Faire un test unitaire ✓ 
