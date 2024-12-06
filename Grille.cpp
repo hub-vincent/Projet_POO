@@ -31,7 +31,7 @@ void Grille::iteration(int n)
 			for (const auto& e : cellules) {
 				if ((y_co - e.return_y() >= -1 && y_co - e.return_y() <= 1) &&
 					(x_co - e.return_x() >= -1 && x_co - e.return_x() <= 1) &&
-					!(y_co == e.return_y() && x_co == e.return_x()) && //Exclusion de la cellule même.
+					!(y_co == e.return_y() && x_co == e.return_x()) && //Exclusion de la cellule mÃªme.
 					e.return_state() == 1) {
 					vivantesvoisines++;
 				}
@@ -115,4 +115,31 @@ void Grille::afficher_Grille() const
 			std::cout << "" << std::endl;
 		}
 	}
+}
+
+bool Grille::verifierSolution(const std::string& cheminSolution)
+{
+	//ouverture
+	std::ifstream fichierSolution(cheminSolution.c_str());
+	if (!fichierSolution) {
+		std::cerr << "pas de fichier." << std::endl;
+		return false;
+	}
+	//lecture
+	std::vector<int> solutionEtats;
+	int valCell;
+	while (fichierSolution >> valCell) {
+		solutionEtats.push_back(valCell);
+	}
+	
+	// Verification
+	for (size_t i = 0; i < cellules.size(); ++i) {
+		if (cellules[i].return_state() != solutionEtats[i]) {
+			std::cerr << "Erreur" << std::endl;
+			return false;
+		}
+	}
+
+	std::cout << "BRAVO" << std::endl;
+	return true;
 }
