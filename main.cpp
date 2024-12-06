@@ -10,16 +10,26 @@
 
 int main()
 {
-    Grille Existance("C:/Users/Vincent/source/repos/Projet_POO/Matrice.txt", "C:/Users/Vincent/source/repos/Projet_POO/Tests.txt");
+    Grille Existance("Matrice.txt", "Tests.txt");
     Existance.lireFichier();
     Existance.iteration(30);
     Existance.ecrireFichier();
     std::cout << " " << std::endl;
-    GrilleTorique B("C:/Users/Vincent/source/repos/Projet_POO/Matrice2.txt", "C:/Users/Vincent/source/repos/Projet_POO/Matrice_out.txt");
+    GrilleTorique B("Matrice2.txt", "Matrice_out.txt");
+    B.lireFichier();
+    B.afficher_Grille();
     Existance.afficher_Grille();
+    B.iteration(2);
+
     // Vérification du resultat
-std::string cheminSolution = "C:/Users/Vincent/source/repos/Projet_POO/TesteSolutions.txt";
-Existance.verifierSolution(cheminSolution);
+std::string cheminSolution = "TexteSolutions.txt";
+if (Existance.verifierSolution(cheminSolution)) {
+    std::cout << "cela correspond" << std::endl;
+}
+else {
+    std::cout << "il y a un probleme" << std::endl;
+}
+
 return 0;
 }
 
