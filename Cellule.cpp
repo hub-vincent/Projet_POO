@@ -36,4 +36,4 @@ void Cellule::change_state(bool u)
 {
 	val = u;
 }
-
+ 
