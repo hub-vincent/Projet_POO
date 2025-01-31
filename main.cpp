@@ -1,45 +1,45 @@
-// Projet_POO.cpp : Ce fichier contient la fonction 'main'. L'exécution du programme commence et se termine à cet endroit.
-//
-
 #include <iostream>
 #include <vector>
 #include <string>
 #include <fstream>
 #include "Grille.h"
 #include "GrilleTorique.h"
+#include "GrilleClassique.h"
+#include "GrilleSFML.h"
 
 int main()
 {
-    Grille Existance("Matrice.txt", "Tests.txt");
-    Existance.lireFichier();
-    Existance.iteration(30);
-    Existance.ecrireFichier();
-    std::cout << " " << std::endl;
-    GrilleTorique B("Matrice2.txt", "Matrice_out.txt");
-    B.lireFichier();
-    B.afficher_Grille();
-    Existance.afficher_Grille();
-    B.iteration(2);
-
-    // Vérification du resultat
-std::string cheminSolution = "TexteSolutions.txt";
-if (Existance.verifierSolution(cheminSolution)) {
-    std::cout << "cela correspond" << std::endl;
+   int a;
+    bool choix;
+    std::string fichierEntree = "Matrice.txt";
+    std::cout << "Choisissez le fichier a consommer" << std::endl;
+    std::cin >> fichierEntree;
+    GrilleClassique existance(fichierEntree);
+    std::cout << "Choissisez le mode 0(Console), 1(Graphique)" << std::endl;
+    std::cin >> choix;
+    std::cout << "Choissisez le nombre d'iterations (nombre entier)" << std::endl;
+    std::cin >> a;
+    if (choix == 0) {
+        existance.lireFichier();
+        existance.iteration(a, choix);
+        std::cout << " " << std::endl;
+        existance.afficher_Grille();
+        std::string cheminSolution = "Matrice2.txt";
+        existance.verifierSolution(cheminSolution);
+    }
+    else
+    {
+    //test model graphique
+    GrilleSFML Existence("Matrice.txt");
+    Existence.lireFichier();
+    Existence.iteration(a,1);
+    Existence.afficherGraphique();  // Lancement de l'affichage SFML
+    Existence.afficher_Grille();
+    }
+    return 0;
 }
-else {
-    std::cout << "il y a un probleme" << std::endl;
-}
 
-return 0;
-}
-
-// Exécuter le programme : Ctrl+F5 ou menu Déboguer > Exécuter sans débogage
-// Déboguer le programme : F5 ou menu Déboguer > Démarrer le débogage
-
-// Astuces pour bien démarrer : 
-//   1. Utilisez la fenêtre Explorateur de solutions pour ajouter des fichiers et les gérer.
-//   2. Utilisez la fenêtre Team Explorer pour vous connecter au contrôle de code source.
-//   3. Utilisez la fenêtre Sortie pour voir la sortie de la génération et d'autres messages.
-//   4. Utilisez la fenêtre Liste d'erreurs pour voir les erreurs.
-//   5. Accédez à Projet > Ajouter un nouvel élément pour créer des fichiers de code, ou à Projet > Ajouter un élément existant pour ajouter des fichiers de code existants au projet.
-//   6. Pour rouvrir ce projet plus tard, accédez à Fichier > Ouvrir > Projet et sélectionnez le fichier .sln.
+    //GrilleTorique B("Matrice2.txt", "Matrice_out.txt");
+    //B.lireFichier();
+    //B.afficher_Grille();
+    //B.iteration(2);
