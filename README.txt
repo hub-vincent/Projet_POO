@@ -6,3 +6,4 @@ TO DO LIST :
 - obstacle
 - grille torique
 - Faire un test unitaire ✓ 
+- Faire les entrées des dnnée à l'allumage ✓
