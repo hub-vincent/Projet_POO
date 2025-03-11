@@ -20,7 +20,7 @@ class Grille
     Grille(std::string lecture);
     virtual void iteration(int n, bool choix);
     virtual void afficher_Grille();
-    virtual void afficherGraphique();//ajout
+    virtual int afficherGraphique(int max_it);//ajout
     virtual void lireFichier();
     virtual void ecrireFichier(int a);
     virtual void clear();
