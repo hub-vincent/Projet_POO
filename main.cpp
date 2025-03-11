@@ -9,6 +9,7 @@
 int main()
 {
    int a;
+   int b = 300;
     bool choix;
     std::string fichierEntree = "Matrice2.txt";
     std::cout << "Choisissez le fichier a consommer" << std::endl;
@@ -33,9 +34,11 @@ int main()
     else
     {
     //test model graphique
+    std::cout << "Choissisez le nombre de temps entre itérations en milliseconde" << std::endl;
+    std::cin >> b;
     Grille Existence(fichierEntree);
     Existence.lireFichier();
-    Existence.afficherGraphique(a);  // Lancement de l'affichage SFML
+    Existence.afficherGraphique(a,b);  // Lancement de l'affichage SFML
     Existence.afficher_Grille();
     }
     return 0;
