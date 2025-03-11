@@ -8,17 +8,12 @@ Grille::Grille(std::string lecture) : lecture(lecture)
 {
     std::ifstream Lecture(this->lecture.c_str());
     //std::ofstream Ecriture(this->ecriture.c_str());
-
-    if (!Lecture)
-    {
-        std::cout << "LECTURE : fichier INVALIDE" << std::endl;
-        
-    }
 }
 
 
 void Grille::iteration(int n, bool choix)
 {
+
     for (int i = 0; i < n; i++) {
         std::vector<int> viv = {};
         std::vector<int> morts = {};
@@ -156,24 +151,26 @@ bool Grille::verifierSolution(const std::string& cheminSolution)
 
 
 
-void Grille::afficherGraphique() {
+int Grille::afficherGraphique(int max_it) {
     const int cellSize = 20;  // Taille des cellules
-    sf::RenderWindow window(sf::VideoMode(x * cellSize, y * cellSize), "Jeu de la Vie et de la mort");
-    
+    sf::RenderWindow window(sf::VideoMode(x * cellSize, y * cellSize), "Jeu de la Vie");
+    sf::Event event;
 
     sf::Clock clock;  //temps entre itérations
+    int c=0; //compteur
 
-    while (window.isOpen()) {
-        sf::Event event;
+    while (!sf::Keyboard::isKeyPressed(sf::Keyboard::Escape) && (c < max_it)) {
+        
         while (window.pollEvent(event)) {
-            if (event.type == sf::Event::Closed)
+            if (event.type == sf::Event::Closed){
                 window.close();
+                return 0;
+            }
         }
 
-        if (clock.getElapsedTime().asSeconds() > 0.5 /*&& !cellules.empty()*/) {
-            iteration(1,1);
-            clock.restart();
-        }
+        sf::sleep(sf::milliseconds(300));
+        Grille::iteration(1,1);
+        c++;
 
         window.clear(sf::Color::Black);
 
@@ -186,4 +183,14 @@ void Grille::afficherGraphique() {
 
         window.display();
     }
+    while (!sf::Keyboard::isKeyPressed(sf::Keyboard::Escape)){
+        
+        while (window.pollEvent(event)) {
+            if (event.type == sf::Event::Closed){
+                window.close();
+                return 0;
+            }
+        }
+    }
+    return 0;
 }
