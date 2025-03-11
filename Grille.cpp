@@ -49,12 +49,7 @@ void Grille::iteration(int n, bool choix)
         for (const auto& b : morts) {
             cellules[b].change_state(0);
         }
-        if (choix == 1)
-        {
-        //Grille::afficherGraphique();
-        }
-        else
-        {
+        if (choix==0) {
         Grille::afficher_Grille();
         }
         ecrireFichier(i);

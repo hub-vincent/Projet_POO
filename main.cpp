@@ -8,8 +8,8 @@
 
 int main()
 {
-   int a;
-   int b = 300;
+    int a;
+    int b = 300;
     bool choix;
     std::string fichierEntree = "Matrice2.txt";
     std::cout << "Choisissez le fichier a consommer" << std::endl;
@@ -18,7 +18,7 @@ int main()
         std::cout << "LECTURE : fichier INVALIDE" << std::endl;
         return 0;
     }
-    GrilleClassique existance(fichierEntree);
+    GrilleTorique existance(fichierEntree);
     std::cout << "Choissisez le mode 0(Console), 1(Graphique)" << std::endl;
     std::cin >> choix;
     std::cout << "Choissisez le nombre d'iterations (nombre entier)" << std::endl;
@@ -36,10 +36,9 @@ int main()
     //test model graphique
     std::cout << "Choissisez le nombre de temps entre itérations en milliseconde" << std::endl;
     std::cin >> b;
-    Grille Existence(fichierEntree);
-    Existence.lireFichier();
-    Existence.afficherGraphique(a,b);  // Lancement de l'affichage SFML
-    Existence.afficher_Grille();
+    existance.lireFichier();
+    existance.afficherGraphique(a,b);  // Lancement de l'affichage SFML
+    existance.afficher_Grille();
     }
     return 0;
 }
