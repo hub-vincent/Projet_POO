@@ -1,6 +1,7 @@
 #pragma once
 #include <vector>
 #include <iostream>
+#include <SFML/Graphics.hpp>//ajout
 #include "Cellule.h"
 
 class Grille
@@ -19,6 +20,7 @@ class Grille
     Grille(std::string lecture);
     virtual void iteration(int n, bool choix);
     virtual void afficher_Grille();
+    virtual void afficherGraphique();//ajout
     virtual void lireFichier();
     virtual void ecrireFichier(int a);
     virtual void clear();

@@ -10,8 +10,8 @@ GrilleTorique::GrilleTorique(std::string a) : Grille(a){}
 
 void GrilleTorique::iteration(int n, bool choix)
 {
-    Grille::iteration(n, choix);
-    /*for (int i = 0; i < n; i++) {
+   /* Grille::iteration(n, choix);
+    for (int i = 0; i < n; i++) {
         std::vector<int> viv = {};
         std::vector<int> morts = {};
         int vivantesvoisines = 0;
@@ -49,5 +49,5 @@ void GrilleTorique::iteration(int n, bool choix)
             }
             Grille::afficher_Grille();
         }
-    }/*/
+    } */
 }

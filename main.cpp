@@ -5,15 +5,20 @@
 #include "Grille.h"
 #include "GrilleTorique.h"
 #include "GrilleClassique.h"
-#include "GrilleSFML.h"
+
 
 int main()
 {
-   int a;
+    int a;
     bool choix;
     std::string fichierEntree = "Matrice.txt";
     std::cout << "Choisissez le fichier a consommer" << std::endl;
     std::cin >> fichierEntree;
+    if (std::ifstream(fichierEntree).is_open() == false){
+        return 0;
+    }
+    //std::ofstream Ecriture(this->ecriture.c_str());
+
     GrilleClassique existance(fichierEntree);
     std::cout << "Choissisez le mode 0(Console), 1(Graphique)" << std::endl;
     std::cin >> choix;
@@ -30,10 +35,10 @@ int main()
     else
     {
     //test model graphique
-    GrilleSFML Existence("Matrice.txt");
+    Grille Existence("Matrice.txt");
     Existence.lireFichier();
-    Existence.iteration(a,1);
-    Existence.afficherGraphique();  // Lancement de l'affichage SFML
+    //Existence.iteration(a,1);
+    Existence.afficherGraphique();  
     Existence.afficher_Grille();
     }
     return 0;
