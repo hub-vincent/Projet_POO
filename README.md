@@ -21,7 +21,7 @@ sudo apt-get install libsfml-dev
 ### Compilation via terminal
 Placez-vous dans le répertoire du projet et compilez avec **Makefile** :
 ```bash
-make main
+make
 ```
 Cela génère un exécutable nommé `main`.
 
