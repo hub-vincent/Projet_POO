@@ -31,7 +31,7 @@ Lancez ensuite l'exécutable en ligne de commande :
 ./main
 ```
 Suivez ensuite les instructions pour choisir :
-1. Le fichier de configuration (matrice de départ).
+1. Le fichier de configuration (matrice de départ). Cela peut être Matrice.txt, Matrice3.txt (qui est un tableau plus grand), on a avion.txt(qui est un planeur pour tester la grille Torique)
 2. Le type de grille (**classique** ou **torique**).
 3. Le mode d'affichage (**console** ou **graphique**).
 4. Le nombre d'itérations.
