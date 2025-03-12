@@ -31,10 +31,12 @@ Lancez ensuite l'exécutable en ligne de commande :
 ./main
 ```
 Suivez ensuite les instructions pour choisir :
-1. Le fichier de configuration (matrice de départ). Cela peut être Matrice.txt, Matrice3.txt (qui est un tableau plus grand), on a avion.txt(qui est un planeur pour tester la grille Torique)
+1. Le fichier de configuration (matrice de départ). Cela peut être Matrice.txt, Matrice3.txt (qui est un tableau plus grand), on a avion.txt(qui est un planeur pour tester la grille Torique) et avion2.txt qui est un format plus grand du précedant
 2. Le type de grille (**classique** ou **torique**).
 3. Le mode d'affichage (**console** ou **graphique**).
 4. Le nombre d'itérations.
+
+   Pour la verification, on va utilisé Matrice.txt avec 30 itération ou plus dans le mode classique et si on accepte la verification. On aura alors la verification qui se passe.
 
 ## Compatibilité avec Visual Studio Code
 Le projet est conçu pour être utilisé sous **Visual Studio Code** sur **Linux Ubuntu**. Il vous suffit d'ouvrir le dossier contenant le projet avec **VS Code** et d'utiliser le **Makefile** pour compiler et exécuter.
