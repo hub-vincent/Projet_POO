@@ -3,6 +3,7 @@
 #include <iostream>
 #include <fstream>
 #include <string>
+#include "GrilleClassique.h"
 #include "GrilleTorique.h"  // Assure-toi que cette classe est bien définie
 
 class Jeu {
@@ -11,6 +12,7 @@ private:
     int iterations;
     int delai;
     bool modeConsole;
+    bool choixGrille;
 
 public:
     Jeu();  // Constructeur
