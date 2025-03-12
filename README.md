@@ -39,5 +39,5 @@ Suivez ensuite les instructions pour choisir :
    Pour la verification, on va utilisé Matrice.txt avec 30 itération ou plus dans le mode classique et si on accepte la verification. On aura alors la verification qui se passe.
 
 ##  Visual Studio Code
-Le projet est conçu pour être utilisé sous **Visual Studio Code** sur **Linux Ubuntu**. Il vous suffit d'ouvrir le dossier contenant le projet avec **VS Code** et d'utiliser le **Makefile** pour compiler et exécuter.
+Le projet est conçu pour être utilisé sous **Visual Studio Code** sur **Linux Ubuntu**. Il vous suffit d'ouvrir le dossier contenant le projet avec **VS Code**.
 
