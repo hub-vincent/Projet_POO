@@ -146,7 +146,7 @@ bool Grille::verifierSolution(const std::string& cheminSolution)
 
 
 
-int Grille::afficherGraphique(int max_it,int clock/*temps entre itérations*/) {
+int Grille::afficherGraphique(int max_it,int clock) {
     const int cellSize = 20;  // Taille des cellules
     sf::RenderWindow window(sf::VideoMode(x * cellSize, y * cellSize), "Jeu de la Vie");
     sf::Event event;
@@ -155,7 +155,7 @@ int Grille::afficherGraphique(int max_it,int clock/*temps entre itérations*/) {
     Grille* grille = this;
 
     while (!sf::Keyboard::isKeyPressed(sf::Keyboard::Escape) && (c < max_it)) {
-        
+
         while (window.pollEvent(event)) {
             if (event.type == sf::Event::Closed){
                 window.close();
@@ -179,7 +179,7 @@ int Grille::afficherGraphique(int max_it,int clock/*temps entre itérations*/) {
         window.display();
     }
     while (!sf::Keyboard::isKeyPressed(sf::Keyboard::Escape)){
-        
+
         while (window.pollEvent(event)) {
             if (event.type == sf::Event::Closed){
                 window.close();
