@@ -152,6 +152,7 @@ int Grille::afficherGraphique(int max_it,int clock/*temps entre itérations*/) {
     sf::Event event;
 
     int c=0; //compteur
+    Grille* grille = this;
 
     while (!sf::Keyboard::isKeyPressed(sf::Keyboard::Escape) && (c < max_it)) {
         
@@ -163,7 +164,7 @@ int Grille::afficherGraphique(int max_it,int clock/*temps entre itérations*/) {
         }
 
         sf::sleep(sf::milliseconds(clock));
-        Grille::iteration(1,1);
+        grille->iteration(1, 1);
         c++;
 
         window.clear(sf::Color::Black);
