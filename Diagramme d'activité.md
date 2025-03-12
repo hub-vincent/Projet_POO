@@ -1,3 +1,4 @@
+```mermaid
 graph TD
     A(Début) --> B(Demander fichier d'entrée)
     B --> C{Fichier valide ?}
@@ -32,3 +33,4 @@ graph TD
     end
 
     Y --> Z(Fin)
+```
