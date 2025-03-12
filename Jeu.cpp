@@ -1,8 +1,37 @@
-#include <iostream>
-#include <vector>
-#include <string>
-#include <fstream>
 #include "Jeu.h"
-#include "Grille.h"
-#include "GrilleTorique.h"
-#include "GrilleClassique.h"
+
+Jeu::Jeu() {
+    std::cout << "Choisissez le fichier a consommer: ";
+    std::cin >> fichierEntree;
+
+    if (!std::ifstream(fichierEntree).is_open()) {
+        std::cout << "LECTURE : fichier INVALIDE" << std::endl;
+        exit(0);
+    }
+
+    std::cout << "Choisissez le mode 0(Console), 1(Graphique): ";
+    std::cin >> modeConsole;
+
+    std::cout << "Choisissez le nombre d'iterations (nombre entier): ";
+    std::cin >> iterations;
+
+    if (modeConsole) {
+        std::cout << "Choisissez le temps entre iterations en millisecondes: ";
+        std::cin >> delai;
+    }
+}
+
+void Jeu::lancer() {
+    GrilleTorique existance(fichierEntree);
+    existance.lireFichier();
+
+    if (!modeConsole) {
+        existance.iteration(iterations, modeConsole);
+        std::cout << std::endl;
+        existance.afficher_Grille();
+        // existance.verifierSolution(fichierEntree);
+    } else {
+        existance.afficherGraphique(iterations, delai);
+        existance.afficher_Grille();
+    }
+}

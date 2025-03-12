@@ -1,8 +1,18 @@
 #pragma once
+
 #include <iostream>
-#include <vector>
-#include <string>
 #include <fstream>
-#include "Grille.h"
-#include "GrilleTorique.h"
-#include "GrilleClassique.h"
+#include <string>
+#include "GrilleTorique.h"  // Assure-toi que cette classe est bien définie
+
+class Jeu {
+private:
+    std::string fichierEntree;
+    int iterations;
+    int delai;
+    bool modeConsole;
+
+public:
+    Jeu();  // Constructeur
+    void lancer();  // Démarrer le jeu
+};
