@@ -18,6 +18,10 @@ Jeu::Jeu() {
 
     std::cout << "Choisissez le nombre d'iterations (nombre entier): ";
     std::cin >> iterations;
+    if ((iterations >= 40) && (modeConsole==0)){
+        std::cout << "DANGER : ITERATIONS TROP NOMBREUSES - EXIT" << std::endl;
+        exit(0);
+    }
 
     if (modeConsole) {
         std::cout << "Choisissez le temps entre iterations en millisecondes: ";
@@ -29,7 +33,7 @@ void Jeu::lancer() {
     GrilleClassique existance(fichierEntree);
     GrilleTorique Existance(fichierEntree);
     if (!choixGrille){
-        std::cout << "Classique" << std::endl;
+        //std::cout<<"Classique"<<std:endl;
         existance.lireFichier();
         if (!modeConsole){
             existance.iteration(iterations, modeConsole);
