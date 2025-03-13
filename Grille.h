@@ -24,6 +24,5 @@ class Grille
     virtual void lireFichier();
     virtual void ecrireFichier(int a);
     virtual void clear();
-    //std::vector<Cellule>& return_cellules();
-    virtual bool verifierSolution(const std::string& cheminSolution);// testUnitaire
+   // virtual bool verifierSolution(const std::string& cheminSolution);  // testUnitaire
 };

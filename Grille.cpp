@@ -4,12 +4,20 @@
 #include <fstream>
 #include <string>
 
-Grille::Grille(std::string lecture) : lecture(lecture)
-{
-    std::ifstream Lecture(this->lecture.c_str());
-    //std::ofstream Ecriture(this->ecriture.c_str());
-}
+Grille::Grille(std::string lecture) : lecture(lecture){}
 
+void Grille::afficher_Grille()
+{
+    std::cout << "Taille du tableau : " << cellules.size() << std::endl;
+    for (const auto& c : cellules) {
+        std::cout << c.return_state();
+        std::cout << " ";
+        if (c.return_x() == (x-1))
+        {
+            std::cout << "" << std::endl;
+        }
+    }
+}
 
 void Grille::iteration(int n, bool choix)
 {
@@ -100,49 +108,49 @@ void Grille::clear()
     cellules.clear();
 }
 
-//std::vector<Cellule>& Grille::return_cellules() {return cellules; }
 
-void Grille::afficher_Grille()
+/* bool Grille::verifierSolution(const std::string& cheminSolution)
 {
-    std::cout << "Taille du tableau : " << cellules.size() << std::endl;
-    for (const auto& c : cellules) {
-        std::cout << c.return_state();
-        std::cout << " ";
-        if (c.return_x() == (x-1))
-        {
-            std::cout << "" << std::endl;
-        }
-    }
-}
-
-bool Grille::verifierSolution(const std::string& cheminSolution)
-{
-    //ouverture
+    // Ouverture
     std::ifstream fichierSolution(cheminSolution.c_str());
     if (!fichierSolution) {
         std::cerr << "Pas de fichier." << std::endl;
         return false;
     }
-    //lecture
+    
+    // Lecture
+    int largeur, hauteur;
+    // Lire les dimensions (si présentes)
+    if (!(fichierSolution >> largeur >> hauteur)) {
+        std::cerr << "Erreur de lecture des dimensions" << std::endl;
+        return false;
+    }
+    
     std::vector<int> solutionEtats;
     int valCell;
     while (fichierSolution >> valCell) {
         solutionEtats.push_back(valCell);
     }
     
-    // Verification
+    // Vérification de la taille
+    if (solutionEtats.size() != cellules.size()) {
+        std::cerr << "Tailles différentes: solution " << solutionEtats.size() 
+                  << ", grille " << cellules.size() << std::endl;
+        return false;
+    }
+    
+    // Verification des valeurs
     for (size_t i = 0; i < cellules.size(); ++i) {
         if (cellules[i].return_state() != solutionEtats[i]) {
-            std::cerr << "Erreur" << std::endl;
+            std::cerr << "Erreur à la position " << i << ": attendu " 
+                     << solutionEtats[i] << ", obtenu " << cellules[i].return_state() << std::endl;
             return false;
         }
     }
 
     std::cout << "Les matrices sont identiques !" << std::endl;
     return true;
-
-    
-}
+} */
 
 
 

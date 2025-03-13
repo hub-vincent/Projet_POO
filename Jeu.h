@@ -5,6 +5,11 @@
 #include <string>
 #include "GrilleClassique.h"
 #include "GrilleTorique.h"  // Assure-toi que cette classe est bien définie
+#include <cassert>
+#include <sstream>
+#include "Cellule.h"
+#include "Grille.h"
+
 
 class Jeu {
 private:
@@ -15,6 +20,6 @@ private:
     bool choixGrille;
 
 public:
-    Jeu();  // Constructeur
-    void lancer();  // Démarrer le jeu
+    Jeu();  
+    void lancer();  
 };

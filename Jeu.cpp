@@ -28,7 +28,6 @@ Jeu::Jeu() {
 void Jeu::lancer() {
     GrilleClassique existance(fichierEntree);
     GrilleTorique Existance(fichierEntree);
-    existance.lireFichier();
     if (!choixGrille){
         std::cout << "Classique" << std::endl;
         existance.lireFichier();
